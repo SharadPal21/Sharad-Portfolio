@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd sharad-portfolio && npm run build",
+  "outputDirectory": "sharad-portfolio/dist"
+}
