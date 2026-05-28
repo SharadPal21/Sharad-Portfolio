@@ -1,0 +1,15 @@
+{
+  "short_name": "Sharad Pal",
+  "name": "Sharad Pal | Premium Developer Portfolio",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#09090b",
+  "background_color": "#09090b"
+}

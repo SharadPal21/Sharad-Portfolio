@@ -1,0 +1,60 @@
+/* Only apply cursor hiding on devices with fine pointers (desktops) */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, input, textarea, select {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.3s;
+  /* Make sure the cursor centers on the tip of the pointer */
+  margin-left: -16px;
+  margin-top: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 92, 246, 0.5); /* var(--accent) with opacity */
+  background: rgba(139, 92, 246, 0.05);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor__dot {
+  width: 6px;
+  height: 6px;
+  background-color: #8b5cf6; /* var(--accent) */
+  border-radius: 50%;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Hover state styling */
+.custom-cursor--hover {
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.8);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.4);
+}
+
+.custom-cursor--hover .custom-cursor__dot {
+  transform: scale(0);
+  opacity: 0;
+}
